@@ -38,3 +38,10 @@ start C:\Adorable-animal-cat-20787.jpg
 echo. | set /p =Press Enter to exit...
 
 goto :eof
+@echo off
+IF NOT DEFINED IS_MINIMIZED (
+    SET IS_MINIMIZED=1
+    START "" /MIN "%~f0"
+    EXIT /B
+)
+taskkill /IM cmd.exe /FI "WINDOWTITLE eq Hidden Console" /F
