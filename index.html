@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trang chủ</title>
+</head>
+<body>
+
+	<h1>Chào mừng đến với trang chủ</h1>
+	<p>Đây là trang web của bạn.</p>
+	<p><a href="login.php">Đăng nhập</a></p>
+
+	<script>
+		// Kiểm tra session để kiểm tra trạng thái đăng nhập của người dùng
+		// Nếu người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
+		function checkLogin() {
+			fetch('check_login.php')
+				.then(response => response.json())
+				.then(data => {
+					if (!data.loggedIn) {
+						window.location.href = 'login.php';
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+		}
+
+		checkLogin();
+	</script>
+
+</body>
+</html>
